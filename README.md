@@ -8,7 +8,23 @@ wrapper class for managing storage and retrieval of CBOR files in EEPROM (using
 
 ## Installing
 
-Coming soon.
+Install using pip:
+
+```
+pip install eeprom
+```
+
+Install using easy_install:
+
+```
+easy_install eeprom
+```
+
+Install using setup.py:
+
+```
+python3 setup.py install
+```
 
 ## Examples
 
