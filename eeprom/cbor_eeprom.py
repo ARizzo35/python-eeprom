@@ -7,7 +7,7 @@ from eeprom.util import check_device_exists
 
 class CBOR_EEPROM(EEPROM):
 
-    chunk_size = 1024
+    _chunk_size = 1024
     _data = None
 
     def __init__(self, *args, **kwargs):
@@ -24,9 +24,9 @@ class CBOR_EEPROM(EEPROM):
                 self._data = {}
                 return self._data
             rd_data = b''
-            for x in range(0, self._size, self.chunk_size):
+            for x in range(0, self._size, self._chunk_size):
                 remaining = self._size - x
-                sz = self.chunk_size if remaining > self.chunk_size else remaining
+                sz = self._chunk_size if remaining > self._chunk_size else remaining
                 rd_data += self.read(sz, addr=x)
                 try:
                     self._data = cbor.loads(rd_data)
