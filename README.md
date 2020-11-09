@@ -23,12 +23,26 @@ easy_install eeprom
 Install using setup.py:
 
 ```
-python3 setup.py install
+python setup.py install
 ```
 
 ## Examples
 
-Coming soon.
+Using the EEPROM class directly:
+
+```python3
+from eeprom import EEPROM
+
+eeprom = EEPROM("24c64", 0, 0x50)
+
+test_string = "This is a string of test data."
+test_length = len(test_string)
+
+eeprom.write(bytes(test_string))
+verify = eeprom.read(test_length)
+
+assert str(verify) == test_string
+```
 
 ## Documentation
 
