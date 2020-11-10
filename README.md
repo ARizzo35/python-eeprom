@@ -38,10 +38,39 @@ eeprom = EEPROM("24c64", 0, 0x50)
 test_string = "This is a string of test data."
 test_length = len(test_string)
 
-eeprom.write(bytes(test_string))
-verify = eeprom.read(test_length)
+eeprom.write(test_string.encode())
+verify = eeprom.read(test_length).decode()
 
-assert str(verify) == test_string
+print(verify)
+
+assert verify == test_string
+```
+
+Using CBOR EEPROM class:
+
+```python3
+from eeprom import CBOR_EEPROM
+
+eeprom = CBOR_EEPROM("24c64", 0, 0x50)
+
+# Write sample data file
+test_data = { 'some_key' : "This is a sample value." }
+eeprom.write_file(test_data)
+
+# Re-initialize to clear cached file
+del eeprom
+eeprom = CBOR_EEPROM("24c64", 0, 0x50)
+
+# Read data file
+verify_data = eeprom.read_file()
+print(verify_data)
+assert verify_data == test_data
+
+# Erase data file
+eeprom.erase_file()
+erased = eeprom.read_file()
+print(erased)
+assert erased == {}
 ```
 
 ## Documentation
