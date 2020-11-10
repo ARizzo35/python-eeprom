@@ -1,6 +1,6 @@
 # python-eeprom
 
-python-eeprom is a pure Python 3 library for initializing, reading, and writing
+`python-eeprom` is a pure Python 3 library for initializing, reading, and writing
 EEPROM devices in userspace Linux. It is useful in embedded Linux environments,
 including custom hardware based platforms. python-eeprom also includes a
 wrapper class for managing storage and retrieval of CBOR files in EEPROM (using
@@ -65,6 +65,15 @@ eeprom = CBOR_EEPROM("24c64", 0, 0x50)
 verify_data = eeprom.read_file()
 print(verify_data)
 assert verify_data == test_data
+
+# Re-initialize to clear cached file
+del eeprom
+eeprom = CBOR_EEPROM("24c64", 0, 0x54)
+
+# Read data object
+val = eeprom.get('some_key')
+print(val)
+assert val == test_data['some_key']
 
 # Erase data file
 eeprom.erase_file()
