@@ -3,6 +3,9 @@
 name: Publish to TestPyPI and PyPI
 
 on:
+  create:
+    tags:
+      - v*
   push:
     branches: [ master, devel ]
 
