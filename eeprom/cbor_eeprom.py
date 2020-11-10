@@ -41,8 +41,9 @@ class CBOR_EEPROM(EEPROM):
         if self._data is None:
             if self._data == d:
                 return
+        self._data = None # Clear cache before writing new data
         self.write(cbor2.dumps(d))
-        self._data = d
+        self._data = d # Update cached data
 
     def erase_file(self):
         # Invalidate file
