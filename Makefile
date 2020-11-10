@@ -9,10 +9,10 @@ dist:
 	python3 setup.py sdist bdist_wheel
 
 upload:
-	twine upload dist/*
+	python3 -m twine upload dist/*
 
 test-upload:
-	twine upload --repository testpypi dist/*
+	python3 -m twine upload --repository testpypi dist/*
 
 clean:
 	rm -rf dist/ build/ *.egg-info/
