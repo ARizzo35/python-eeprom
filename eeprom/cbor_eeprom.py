@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import cbor
+import cbor2
 from eeprom.eeprom import EEPROM
 from eeprom.util import check_device_exists
 
@@ -29,7 +29,7 @@ class CBOR_EEPROM(EEPROM):
                 sz = self._chunk_size if remaining > self._chunk_size else remaining
                 rd_data += self.read(sz, addr=x)
                 try:
-                    self._data = cbor.loads(rd_data)
+                    self._data = cbor2.loads(rd_data)
                     break
                 except Exception:
                     self._data = None
@@ -41,7 +41,7 @@ class CBOR_EEPROM(EEPROM):
         if self._data is None:
             if self._data == d:
                 return
-        self.write(cbor.dumps(d))
+        self.write(cbor2.dumps(d))
         self._data = d
 
     def erase_file(self):
