@@ -20,4 +20,4 @@ Coming soon.
 
 ## License
 
-python-periphery is MIT licensed. See the included [LICENSE](LICENSE) file.
+python-eeprom is MIT licensed. See the included [LICENSE](LICENSE) file.
