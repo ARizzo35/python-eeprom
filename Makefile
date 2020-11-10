@@ -9,6 +9,9 @@ dist:
 	python3 setup.py sdist bdist_wheel
 
 upload:
+	twine upload dist/*
+
+test-upload:
 	twine upload --repository testpypi dist/*
 
 clean:
