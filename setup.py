@@ -20,6 +20,9 @@ setuptools.setup(
         'Topic :: System :: Hardware',
         'Topic :: System :: Hardware :: Hardware Drivers'
     ],
+    setup_requires = [
+        'wheel'
+    ],
     install_requires = [
         'cbor2>=5.2.0'
     ],
