@@ -2,8 +2,8 @@ import setuptools
 
 setuptools.setup(
     name="eeprom",
-    version="0.0.4",
-    author="ARizzo35",
+    version="0.0.5",
+    author="Adam Rizkalla",
     author_email="a1rizkalla@gmail.com",
     description="A pure Python 3 library for Linux sysfs EEPROM devices.",
     long_description="""python-eeprom is a pure Python 3 library for initializing, reading, and writing EEPROM devices in userspace Linux. It is useful in embedded Linux environments, including custom hardware based platforms. python-eeprom also includes a wrapper class for managing storage and retrieval of CBOR files in EEPROM (using 'cbor2' library). python-eeprom is MIT licensed. See https://github.com/ARizzo35/python-eeprom for more information.""",
