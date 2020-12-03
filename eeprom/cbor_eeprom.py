@@ -135,7 +135,11 @@ def main():
     elif args.command == 'data':
         eeprom = CBOR_EEPROM(args.type, args.bus, int(args.address, 0))
         if args.data_cmd == 'get':
-            print(eeprom.get(args.name))
+            ret = eeprom.get(args.name)
+            if ret is not None:
+                print(eeprom.get(args.name))
+            else:
+                sys.exit(1)
         elif args.data_cmd == 'put':
             if args.value is None:
                 sys.stderr.write("Value missing (use -v/--value)\n")
