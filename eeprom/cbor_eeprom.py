@@ -33,12 +33,12 @@ class CBOR_EEPROM(EEPROM):
                     break
                 except Exception:
                     self._data = None
-            if self._data is None or len(self._data) == 0:
+            if self._data is None or not isinstance(self._data, bytes) or len(self._data) == 0:
                 self._data = {}
         return self._data
 
     def write_file(self, d):
-        if self._data is None:
+        if self._data is not None:
             if self._data == d:
                 return
         self._data = None # Clear cache before writing new data

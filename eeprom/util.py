@@ -11,7 +11,7 @@ def check_device_exists(bus, addr):
         )
         if cp.returncode != 0:
             if "Permission denied" in cp.stderr.decode():
-                raise PermissionError(cp.stderr.deocde())
+                raise PermissionError(cp.stderr.decode())
             return False
         if '--' in cp.stdout.decode():
             return False
