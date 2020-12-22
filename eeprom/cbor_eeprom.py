@@ -33,7 +33,7 @@ class CBOR_EEPROM(EEPROM):
                     break
                 except Exception:
                     self._data = None
-            if self._data is None or not isinstance(self._data, bytes) or len(self._data) == 0:
+            if self._data is None or not isinstance(self._data, dict) or len(self._data) == 0:
                 self._data = {}
         return self._data
 
