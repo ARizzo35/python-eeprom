@@ -80,7 +80,8 @@ class EEPROM():
     def close(self):
         if self._eeprom_fd:
             os.close(self._eeprom_fd)
-        self._delete_device()
+        # Leave device open for multiple access
+        #self._delete_device()
 
     def read(self, size, addr=0):
         if (size + addr) > self._size:
