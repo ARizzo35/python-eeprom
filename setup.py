@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="eeprom",
-    version="0.0.9",
+    version="0.1.0",
     author="Adam Rizkalla",
     author_email="a1rizkalla@gmail.com",
     description="A pure Python 3 library for Linux sysfs EEPROM devices.",

@@ -105,6 +105,6 @@ class EEPROM():
             while written < size:
                 written += os.write(self._eeprom_fd, data[written:])
         except OSError as e:
-            raise EEPROMError(e.errno, f"EERPOM Write: {e.strterror}")
+            raise EEPROMError(e.errno, f"EERPOM Write: {e.strerror}")
         return written
 
