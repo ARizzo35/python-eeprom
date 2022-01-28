@@ -2,7 +2,7 @@
 
 `python-eeprom` is a pure Python 3 library for initializing, reading, and writing
 EEPROM devices in userspace Linux. It is useful in embedded Linux environments,
-including custom hardware based platforms. python-eeprom also includes a
+including custom hardware based platforms. `python-eeprom` also includes a
 wrapper class for managing storage and retrieval of CBOR files in EEPROM (using
 'cbor' library). python-eeprom is MIT licensed.
 
@@ -11,7 +11,7 @@ wrapper class for managing storage and retrieval of CBOR files in EEPROM (using
 Install using pip:
 
 ```
-pip install eeprom
+pip3 install eeprom
 ```
 
 Install using easy_install:
@@ -23,7 +23,7 @@ easy_install eeprom
 Install using setup.py:
 
 ```
-python setup.py install
+python3 setup.py install
 ```
 
 ## Examples
@@ -88,4 +88,4 @@ Coming soon.
 
 ## License
 
-python-eeprom is MIT licensed. See the included [LICENSE](LICENSE) file.
+`python-eeprom` is MIT licensed. See the included [LICENSE](LICENSE) file.
